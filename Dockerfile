@@ -31,7 +31,7 @@ ENTRYPOINT [ "python" ]
 =======
 FROM node:16.18.0 AS builder
 
-COPY /exscienta-ui /app
+COPY /ui /app
 
 # switch working directory
 WORKDIR /app
