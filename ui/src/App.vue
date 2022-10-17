@@ -45,7 +45,7 @@
                 :min="slider2.min"
                 hide-details
                 thumb-label="always"
-                :label="slider1.label"
+                :label="slider2.label"
               >
                 <template v-slot:append>
                   <v-text-field
@@ -309,6 +309,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
+import { inRange } from "./inRange";
 
 export default defineComponent({
   name: "App",
@@ -398,6 +399,66 @@ export default defineComponent({
   },
   methods: {
     loader() {
+      if (!inRange(this.slider1.val, this.slider1.min, this.slider1.max)) {
+        this.result = `The value for ${this.slider1.label} must be between ${this.slider1.min} and ${this.slider1.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider2.val, this.slider2.min, this.slider2.max)) {
+        this.result = `The value for ${this.slider2.label} must be between ${this.slider2.min} and ${this.slider2.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider3.val, this.slider3.min, this.slider3.max)) {
+        this.result = `The value for ${this.slider3.label} must be between ${this.slider3.min} and ${this.slider3.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider4.val, this.slider4.min, this.slider4.max)) {
+        this.result = `The value for ${this.slider4.label} must be between ${this.slider4.min} and ${this.slider4.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider5.val, this.slider5.min, this.slider5.max)) {
+        this.result = `The value for ${this.slider5.label} must be between ${this.slider5.min} and ${this.slider5.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider6.val, this.slider6.min, this.slider6.max)) {
+        this.result = `The value for ${this.slider6.label} must be between ${this.slider6.min} and ${this.slider6.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider7.val, this.slider7.min, this.slider7.max)) {
+        this.result = `The value for ${this.slider7.label} must be between ${this.slider7.min} and ${this.slider7.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider8.val, this.slider8.min, this.slider8.max)) {
+        this.result = `The value for ${this.slider8.label} must be between ${this.slider8.min} and ${this.slider8.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider9.val, this.slider9.min, this.slider9.max)) {
+        this.result = `The value for ${this.slider9.label} must be between ${this.slider9.min} and ${this.slider9.max}`;
+        this.snackbar = true;
+        return;
+      }
+
+      if (!inRange(this.slider10.val, this.slider10.min, this.slider10.max)) {
+        this.result = `The value for ${this.slider10.label} must be between ${this.slider10.min} and ${this.slider10.max}`;
+        this.snackbar = true;
+        return;
+      }
+
       this.loading = true;
 
       axios

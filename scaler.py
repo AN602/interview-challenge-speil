@@ -9,5 +9,4 @@ def runScaler(texture_mean, area_mean, concavity_mean, area_se, concavity_se, fr
     d = {'texture_mean': [texture_mean], 'area_mean': [area_mean], 'concavity_mean': [concavity_mean], 'area_se': [area_se], 'concavity_se': [concavity_se], 'fractal_dimension_se': [
         fractal_dimension_se], 'smoothness_worst': [smoothness_worst], 'concavity_worst': [concavity_worst], 'symmetry_worst': [symmetry_worst], 'fractal_dimension_worst': [fractal_dimension_worst]}
     df = pd.DataFrame(data=d)
-    print(df)
-    return scaler.fit_transform(df)
+    return scaler.transform(df)
